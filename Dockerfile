@@ -27,7 +27,8 @@ RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 RUN mkdir -p /var/www/html
 ADD scripts/phpinfo.php /var/www/html/
 RUN chown -R www-data:www-data /var/www
-RUN chmod 755 /var/www
+RUN chmod 644 $(find /var/www -type f)
+RUN chmod 755 $(find /var/www -type d)
 
 ADD scripts/nginx-start /usr/local/bin/
 RUN chmod +x /usr/local/bin/nginx-start
