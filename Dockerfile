@@ -11,7 +11,8 @@ RUN add-apt-repository -y ppa:ondrej/php5-5.6
 RUN add-apt-repository -y ppa:nginx/stable
 
 RUN apt-get update -y
-RUN apt-get install -y --force-yes git-core curl zip unzip wget nginx \
+RUN apt-get install -y --force-yes \
+  git-core curl zip unzip wget nginx mysql-client \
   php5-fpm php5-cli php5-json php5-mcrypt php5-mysql php5-gd php5-curl \
   php5-imap php5-tidy php5-intl php5-sqlite
 
